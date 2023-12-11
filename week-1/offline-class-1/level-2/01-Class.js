@@ -1,3 +1,4 @@
+//Class and Object
 
 class Animal {
   constructor(name, legCount) {

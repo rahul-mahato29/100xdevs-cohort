@@ -1,5 +1,7 @@
 // String handbook
 
+//JS provide us some auxilary helper methods for string, some important methods are mentioned below,
+
 // String: length, indexOf(), lastIndexOf(), slice(), substring(), replace(),
 // split(), trim(), toUpperCase(), toLowerCase(), etc.
 

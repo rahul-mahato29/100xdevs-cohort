@@ -1,3 +1,6 @@
+//ParseInt - global function, it parse or convert to integer value.
+//ParseFloat - global function, it parses to the float value.
+
 function explainParseInt(value) {
   console.log("Original Value:", value);
   let result = parseInt(value);
@@ -6,8 +9,8 @@ function explainParseInt(value) {
 
 // Example Usage for parseInt
 explainParseInt("42");
-explainParseInt("42px");
-explainParseInt("3.14");
+explainParseInt("42px");   //if alphabetic character are there with number but it is present after the numberic value, then only this function will work, means (explainParseInt("aoijjf42px")) this will not work 
+explainParseInt("3.14");   //will return the only integer value by removing the point value.
 
 function explainParseFloat(value) {
   console.log("Original Value:", value);
