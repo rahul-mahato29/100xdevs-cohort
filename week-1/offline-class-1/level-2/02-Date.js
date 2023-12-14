@@ -1,3 +1,8 @@
+//Date and Time related functions
+
+//DATE - is not a function, it's a global class, my creating the object of it, we can do bunch of things
+//       like we can use get DATE,MONTH,FULLYEAR,HOURS..etc
+
 function dateMethods() {
   const currentDate = new Date();
   console.log("Current Date:", currentDate);
@@ -26,3 +31,22 @@ function dateMethods() {
 
 // Example Usage for Date Methods
 dateMethods();
+
+
+
+//Example :calculate how much time a function is taking.
+function calculation(n){
+  let a = 0;
+  for(let i=0; i<n; i++){
+    a += i;
+  }
+  return a;
+}
+
+const beforeDate = new Date();
+const beforeTimeInMs = beforeDate.getTime();
+calculation(10000000);
+const afterDate = new Date();
+const afterTimeInMs = afterDate.getTime();
+
+console.log(afterTimeInMs - beforeTimeInMs);
