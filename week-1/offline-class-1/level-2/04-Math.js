@@ -1,3 +1,5 @@
+//Maths Functions 
+
 function mathMethods(value) {
   console.log("Original Value:", value);
 
@@ -10,7 +12,7 @@ function mathMethods(value) {
   let flooring = Math.floor(value);
   console.log("After floor():", flooring);
 
-  let randomValue = Math.random();
+  let randomValue = Math.random();             //frequently used method
   console.log("After random():", randomValue);
 
   let maxValue = Math.max(5, 10, 15);
