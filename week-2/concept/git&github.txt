@@ -1,0 +1,135 @@
+::GIT AND GITHUB::
+
+----Commands----
+
+1. git clone <repo link> -> cloning/coping a repository from github to our local machine.
+2. git status -> display the state of our code.
+   **generaly has 4 types of status**
+     1. untracked - new files that git doesn't yet track
+     2. modified - changed that we have done but not updated in the main folder(means on github)
+     3. staged - file is ready to be commited (means after add)
+     4. unmodified - unchanged file.
+
+3. ls -a -> to see the (normal file + hidden file) in a folder, basically means it will display all the files.
+4. git add <file name> ->add new or changed files in your working directory to the git staging area.
+5. git add . -> add all the changes in one go (we use this, when we have done lot of changes and want to commit all in the main file).
+5. git commit -m <"some message"> -> it is the record of all changes.
+**till now you will not see any changes on the github(means addition of any file)**
+**and it will show ("Your branch is ahead of 'origin/main' by 1 commit") -
+  means our local repo having one extra file which is not there in my original repo(on github), 
+  so to add this changes in the original repo(on github) - will push our changes to the original file**
+
+6. git push origin main -> upload local repo content to remote repo.
+
+7. git remote -v -> is used to view the list of remote(Github) repositories associated with your Git repository and their corresponding URLs.
+
+NOTE : And in case, we don't have any remote repositories associated with out Git then we can configer the remote repository(means GitHub)
+       with out local (Git) repository, so that whenever we do any changes in the local repositories then using PUSH command we can reflect 
+       it back to the remote repo. So to configer which the remote repository, we use below command.
+
+8. git remote add origin <link of github repo> -> is used to associate a remote repository with your local Git repository.
+
+
+# remote - means talking about github
+# local - means talking about out system
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+----Git and Github----
+
+Git - free and open source version control system
+
+Q- What is version control system ?
+
+- A system that is use to keep tracks of version's of our project
+- In simple words, a system that keeps track of our files or projects.
+- It allows you  to revert selected files to a previous state, revert the entire project to a previous state, 
+  compare changes over time, see who last modified something so that  we can know what might be causing a problem,
+  or what is the issue, who made it, and when with the details.
+
+Q- Two types of version control system ?
+   
+   1. Centralized Version control (ex: subversion and team foundation server)
+   2. Distributed Version control (ex: git and mercurial)
+
+Q- Why Git ?
+
+- free
+- open source
+- scalable (don't need any active server to use it)
+- super fast
+- cheap branching and merging
+
+Q- What is GitHub ?
+
+-GitHub is a web-based hosting service for git repositories.
+-You can use git without Github, but you cannot use github without git.
+
+Q- Difference between Git and Github ?
+
+Git
+
+-Used for version control
+-Installed locally on computer
+-Tracks changes made to a file
+
+GitHub
+
+-Used for hosting git repositories
+-Cloud based
+-provides a web interface to view file changes 
+
+Q- Some Terminology
+                      
+-Local repository
+Every VCS(version control system) tool provides a private workplace as a working copy. Developer make changes in their private 
+workplace and after commit, these changes become a part of the repository. Git takes it one step futher by providing them 
+a private copy fo the whole repository. Users can perfrom many operations with this repository such as add file, remove file, 
+rename file, move file, commit changes, and many more. And after commit, these changes become the part of the main repository.
+
+-Working Directory and Staging Area or Index
+An intermediate area where commits can be formatted and reviewed before completing the commit.
+
+-Push 
+Send a change to another repository(may require permission)
+
+-pull
+grab a change from a repository
+
+Q - Basic workflow of Git
+
+Step-1 - You modify a file from the working directory
+Step-2 - You add these files to the staging area.
+Step-3 - You perform a commit operation that moves the files from the staging area. After push operation, 
+         it stores the changes permanently to the Git repository.
+
+Q- Blobs (Binary Large Object)
+
+Blobs stands for Binary Large Object. Each version of a file is represented by a blob. A blob holds the file related data (it’s version and all) 
+but doesn’t contain any metadata, (means information stored inside the file) about the file. It is a binary file, and in the Git database, 
+it is named as the SHA1 hash of that file. In Git, files are not addressed by names internally. Everything is content-addressed, 
+meaning it is addressed by a SHA1 hash or unique identifier.
+
+Trees
+
+Trees is an object, which represents a directory. It holds blobs as well as other sub-directories. Basically it is used to maintain association 
+and relationship between directories and sub-directories.
+
+Commits
+
+Commit holds the current state of the repository. A commit is also named by SHA1 hash.
+Commit object (think like a node of the linked list)
+Every commit object has a pointer to the parent commit object.
+From a given commit, you  can traverse back by looking at the parent pointer to view the history of the commit.
+If a commit has multiple parent commits, then that particular commit has been created by merging two branches.
+
+Git Commands
+
+Clone : Bring a repository hosted somewhere like Github into your local machine.
+Add : add new or changed files in your working directory to the git staging area 
+Commit : give us the option to save your files changes in git, so that we can eventually push them or upload all of these to a git repo like GitHub.
+Push : Upload your commit to a git repo, like GitHub.
+Pull : Download changes from a remote repository to your local repository.
+
+
+
