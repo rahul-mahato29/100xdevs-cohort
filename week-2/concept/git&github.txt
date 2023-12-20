@@ -1,41 +1,84 @@
 ::GIT AND GITHUB::
 
-----Commands----
-
+                             ----Commands----
+ 
 1. git clone <repo link> -> cloning/coping a repository from github to our local machine.
 2. git status -> display the state of our code.
-   **generaly has 4 types of status**
-     1. untracked - new files that git doesn't yet track
-     2. modified - changed that we have done but not updated in the main folder(means on github)
-     3. staged - file is ready to be commited (means after add)
-     4. unmodified - unchanged file.
+                 **generaly has 4 types of status**
+                   1. untracked  - new files that git doesn't yet track
+                   2. modified   - changed that we have done but not updated in the main folder(means on github)
+                   3. staged     - file is ready to be commited (means after add)
+                   4. unmodified - unchanged file.
 
-3. ls -a -> to see the (normal file + hidden file) in a folder, basically means it will display all the files.
-4. git add <file name> ->add new or changed files in your working directory to the git staging area.
-5. git add . -> add all the changes in one go (we use this, when we have done lot of changes and want to commit all in the main file).
+3. git add <file name> ->add new or changed files in your working directory to the git staging area.
+4. git add .           -> add all the changes in one go (we use this, when we have done lot of changes and want to commit all in the main file).
 5. git commit -m <"some message"> -> it is the record of all changes.
-**till now you will not see any changes on the github(means addition of any file)**
-**and it will show ("Your branch is ahead of 'origin/main' by 1 commit") -
-  means our local repo having one extra file which is not there in my original repo(on github), 
-  so to add this changes in the original repo(on github) - will push our changes to the original file**
+                    **till now you will not see any changes on the github(means addition of any file)**
+                    **and it will show ("Your branch is ahead of 'origin/main' by 1 commit") -
+                      means our local repo having one extra file which is not there in my original repo(on github), 
+                      so to add this changes in the original repo(on github) - will push our changes to the original file**
 
-6. git push origin main -> upload local repo content to remote repo.
+6. git restore --staged <file>  -> to unstage a particular file that you have been commited.
 
-7. git remote -v -> is used to view the list of remote(Github) repositories associated with your Git repository and their corresponding URLs.
+7. git push origin main -> upload local repo content to remote repo.
+
+
+
+
+8. git remote -v        -> is used to view the list of remote(Github) repositories associated with your Git repository and their corresponding URLs.
 
 NOTE : And in case, we don't have any remote repositories associated with out Git then we can configer the remote repository(means GitHub)
        with out local (Git) repository, so that whenever we do any changes in the local repositories then using PUSH command we can reflect 
        it back to the remote repo. So to configer which the remote repository, we use below command.
 
-8. git remote add origin <link of github repo> -> is used to associate a remote repository with your local Git repository.
+9. git remote add origin <link of github repo> -> is used to associate a remote repository with your local Git repository.
+
+
+
+10. git commit -ma       -> add and commit both using this command, but it will only work in case of "modified file", means only modified file will get
+                         added and commited in one go using this command.
+
+11. ls -a               -> to see the (normal file + hidden file) in a folder, basically means it will display all the files.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+                                --VIM Command--
+
+1.  vi <file_name>  (ex:  vi README.md) - help in doing the changes itself inside the git bash terminal, by opening the VIM terminal
+
+Imp Commands to operate the VIM terminal,
+
+1.Entering Insert Mode:
+
+     Press "i" to enter insert mode. You will see -- INSERT -- at the bottom of the terminal, indicating that you are in insert mode.
+
+2.Making Changes:
+
+     Navigate to the location in the file where you want to make changes using the arrow keys or other movement keys.
+     Make the necessary changes.
+
+3.Exiting Insert Mode:
+
+     To exit insert mode and return to normal mode, press the "Esc key". The -- INSERT -- message at the bottom should disappear.
+
+4.Saving Changes:
+
+     To save changes, while in normal mode, type ":w" and press Enter. This writes (saves) the changes to the file.
+
+5.Exiting Vim:
+
+     To exit Vim, while in normal mode, type ":q" and press Enter.
+    
+
 
 
 # remote - means talking about github
 # local - means talking about out system
 
+----------------------------------------------------------------------------------------------------------------------------------------------------
 
-\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-----Git and Github----
+                                                  ----Git and Github----
 
 Git - free and open source version control system
 
@@ -132,4 +175,34 @@ Push : Upload your commit to a git repo, like GitHub.
 Pull : Download changes from a remote repository to your local repository.
 
 
+--Git WorkFlow--
 
+1. Local Git Workflow (when we work on our own project)
+
+   
+                git add                        git commit                      git push
+(write code)    ----->   (Stages code changes)    ----->    (Commit Changes)    ----->    (Push Changes to remote machine)
+
+
+2. Git Workflow (when we work on real project)
+
+
+                git add                        git commit                      pull request                                         git push
+(write code)    ----->   (Stages code changes)    ----->    (Commit Changes)    ----->      (code review by the project member)      ----->     (push changes to remote machine)
+
+
+NOTE : In case of Real Project, generally we don’t have the access to push the changes directly in the main branch, 
+       so therefore we raise the pull request and once our changes get reviewed then reviewer push our changes in the main branch.
+
+
+
+---Git Branching--
+
+1. Master Branch - It is the default branch or the main branch, where we will adding changes or features and resolving buggs to make it more better,
+                   then it's previous version.
+
+2. feature Branch - it's a copy of current main branch where we do add and test some features on which we were working. And after adding the changes it is 
+                    working fine then we merge it in the main(master) branch.
+                                     
+3. Hotfix Branch - When we find any buggs inside the main branch, then we make a copy of the main brach called hotfix branch to fix the bug and apply some
+                   changes and test it , once bug get fixed then we add the changes inside the master branch.
