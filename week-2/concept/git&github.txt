@@ -31,8 +31,8 @@ NOTE : And in case, we don't have any remote repositories associated with out Gi
 9. git remote add origin <link of github repo> -> is used to associate a remote repository with your local Git repository.
 
 
-10. git commit -ma       -> add and commit both using this command, but it will only work in case of "modified file", means only modified file will get
-                         added and commited in one go using this command.
+10. git commit -am       -> add and commit both using this command, but it will only work in case of "modified file", means only modified file will get
+                            added and commited in one go using this command.
 
 11. ls -a               -> to see the (normal file + hidden file) in a folder, basically means it will display all the files.
 
@@ -50,8 +50,50 @@ ex: git checkout -b feature_update_file
 
 15. git diff <branc_name> -> compare the different branches and return it's difference .
 
+16. git push -u origin <branch_name> -> to push the changes on the feature branch to the remote machine(gitgub)
+
+ex: git push -u origin add_feature 
+
+NOTE : It is recommanded to delete the branch which is no longer to use, for example add_feature branch.
+
+17. git branch -d <branch_name>  -> to delete the branch, which is no longer to use.
+
+18. git merge <branch_name> -> to merge the changes into the main branch.
+
+--Git Commands to resolve conflicts--
+
+19. git log --merge  : produce the list of commits that are causing the conflict.
+
+20. git diff : Identify the difference between the states repositories or files. 
+
+21. git checkout : Used to undo the changes made to the file, or for changing branches.
+
+22. git reset --mixed : Used to undo changes to the working directory and staging area.
+
+23. git merge --abort : Help in exiting the merge process and returning back to the state before the merging began.
+
+24. git reset : Used at the time of merge conflict to reset the conflicted files to their original state.
 
 
+EXAMPLE - merging conflit example
+
+Error:
+Auto-merging index.html
+CONFLICT (context): Merge conflict in index.html
+Automatic merge falied: fix conflicts and then commit the result.
+
+so, to resolve the above error, from the information we got the idea that , there are few changes inside the index.html file
+which is not present in our branch , so we do it manually. (check in vim and observe the changes and make the changes).
+
+then check,
+$ git diff main   - after improting the all the changes in our own branch, it will no show any difference. Because now both the 
+                    files are same (index.html)
+
+$ git commit -am "Resolved merge conflict"
+
+$ git merge main
+
+$ git push origin hotfix.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
@@ -218,3 +260,17 @@ NOTE : In case of Real Project, generally we don’t have the access to push the
                                      
 3. Hotfix Branch - When we find any buggs inside the main branch, then we make a copy of the main brach called hotfix branch to fix the bug and apply some
                    changes and test it , once bug get fixed then we add the changes inside the master branch.
+
+Q- What is Git Merge Conflcit ?
+
+If we have created a feature branch and added some feature in it, and want to add this feature in the main branch then to add this, we merge the feature branch into the main 
+branch, but mostly this process is not smooth, because If you are working on the real project then every time some team or developer will be there who is working on some features or resolving
+some bugs, so for example - the time you made the feature branch and the time you want to merge the feature branch into the main branch..then there is a posibilty that between this time 
+someone had added or done some changes in the main branch, and because the changes is not there in the feature branch , which one get added after we created the feature branch..so therefore 
+it will not get merge and raise a merge conflit.
+
+There are 2 types of merge conflicts 
+
+1. While starting the merge process
+2. During the merge process
+
