@@ -22,9 +22,6 @@
 
 7. git push origin main -> upload local repo content to remote repo.
 
-
-
-
 8. git remote -v        -> is used to view the list of remote(Github) repositories associated with your Git repository and their corresponding URLs.
 
 NOTE : And in case, we don't have any remote repositories associated with out Git then we can configer the remote repository(means GitHub)
@@ -34,11 +31,26 @@ NOTE : And in case, we don't have any remote repositories associated with out Gi
 9. git remote add origin <link of github repo> -> is used to associate a remote repository with your local Git repository.
 
 
-
 10. git commit -ma       -> add and commit both using this command, but it will only work in case of "modified file", means only modified file will get
                          added and commited in one go using this command.
 
 11. ls -a               -> to see the (normal file + hidden file) in a folder, basically means it will display all the files.
+
+12. git branch -> return all the branches which is associate with the project on which we are working.
+
+Ex : $ git branch
+     * add_feature  (this astric symbol - indicate the current branch on which we are working)
+       main
+
+13. git checkout -b <branch_name> -> to create a new branch (for adding feature or fixing any bugs)
+
+ex: git checkout -b feature_update_file
+
+14. git checkout <branch_name> -> to navigate from one branch to another branch
+
+15. git diff <branc_name> -> compare the different branches and return it's difference .
+
+
 
 
 
