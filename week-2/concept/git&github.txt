@@ -50,7 +50,9 @@ ex: git checkout -b feature_update_file
 
 15. git diff <branc_name> -> compare the different branches and return it's difference .
 
+16. git push -u origin <branch_name> -> to push the changes on the feature branch to the remote machine(gitgub)
 
+ex: git push -u origin add_feature 
 
 
 
