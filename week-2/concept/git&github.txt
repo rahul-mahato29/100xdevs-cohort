@@ -96,6 +96,44 @@ $ git merge main
 $ git push origin hotfix.
 
 
+___________IMP___________
+Q- If you've successfully merged your feature branch into the main branch on the remote repository (GitHub), but the changes are 
+   not yet reflected in your local main branch in VSCode, you may need to perform a few additional steps to update your local 
+   repository. 
+   
+Here's what you can do:
+
+1. Fetch the Changes: Open Git Bash or the terminal in VSCode, and navigate to your local repository's root directory.
+   Run the following command to fetch the latest changes from the remote repository:
+
+$ git fetch origin
+This command fetches the changes from the remote repository but doesn't automatically merge them into your local branches.
+
+2. Checkout the Main Branch: Ensure you are on the main branch:
+
+$ git checkout main
+This switches your working directory to the main branch.
+
+3. Merge the Changes: Merge the changes from the remote main branch into your local main branch:
+
+$ git merge origin/main
+This command merges the changes fetched from the remote main branch into your local main branch.
+
+4. Resolve Conflicts (if any): If there are merge conflicts, Git will notify you. Open the conflicted files, resolve the conflicts, 
+   and then complete the merge by running:
+
+$ git merge --continue
+If you are unsure about resolving conflicts, you can also use git mergetool or manually edit the conflicting files.
+
+5. Push the Changes: Finally, push the merged changes to the remote repository:
+
+$ git push origin main
+This updates the main branch on the remote repository with your local changes.
+
+Now, your local main branch should be updated with the changes from the remote main branch. You may need to refresh your VSCode or 
+open the files to see the changes reflected in your editor.
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------
                                 --VIM Command--
 
