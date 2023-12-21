@@ -9,4 +9,5 @@ Tracking all my learnings!
 
 ## Development Environment
 
-Testing all the concept of git branching.
+1. Testing all the concept of git branching.
+2. creating a git conflict.
