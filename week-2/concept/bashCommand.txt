@@ -1,5 +1,41 @@
+::Basic and Advance Bash Commands::
+
+# terminal : it is nothing but another interface to do things or navigate on your machine.
+
+--Bash Commands--
+
+1. pwd -> print working directory
+2. cd -> change directory
+3. cd .. -> go back by one folder
+4. ls - listing all the files of the current folder
+5. mkdir - make directory / create directory
+6. touch - create files inside a particular folder
+7. cat - print the content of a file
+8. vi - VIM command (allow us to edit files)
+9. mv - helps in moving a file or folder from one place to other.
+
+syntax : mv (file_wantToMove) (folderName_wheretomove)
+Ex : $ mv a.txt newfolder
+
+10. cp -> helps in copy a file or folder
+
+syntax : cp (file/folder_name)  (folderName_toPaste)
+Ex : $ cp a.txt newfolder
+
+11. npm (node package manager) ->  it helps in managing the external libraries that we use in our local machine.
+
+syntax : npm install libraryName
+
+for example : express, so to use express(which is an external library) in our local machine, we use "npm" command, which will help us in using the 
+              express libraries, and this express library is register on NPM(NPM is a place where , people register there librabies which is written by them) 
+              and we can use those librabies by using "npm" command to resolve/do our task.
+
+12. node -> it give us a playground to run or test javascript code.
+13. node a.js -> it helps to compile and run our javascript file locally.
+
+
+
+______________________________________________________________________________________
 IMP - cd /mnt
-
-
 
 # mahatorahul@LAPTOP :/mnt/c/Users/815ra/OneDrive/Desktop

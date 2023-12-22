@@ -163,7 +163,7 @@ Imp Commands to operate the VIM terminal,
 
 5.Exiting Vim:
 
-     To exit Vim, while in normal mode, type ":q" and press Enter.
+     To exit Vim, while in normal mode, type ":q" and press Enter or in some case it is ":q!" and press Enter.
     
 
 
