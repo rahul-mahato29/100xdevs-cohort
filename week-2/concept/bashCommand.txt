@@ -3,7 +3,8 @@
 # terminal : it is nothing but another interface to do things or navigate on your machine.
 # ctrl + c : this helps in terminating the running command or process.
 
---Bash Commands--
+
+--Basic Bash Commands--
 
 Q- What is Bash ?
 
@@ -13,25 +14,6 @@ It is command line interpreater language, that help's in interacting with our op
 2. cd -> change directory
 3. cd .. -> go back by one folder
 4. ls - listing all the files of the current folder
-_________________________________________________
-4.1 ls newDir     -> to check all the files/folders inside newDir directory
-4.2 ls -l         -> to check the details about all the files(it's size, owner/author, last modified date, file type(either a file or folder))
-4.3 ls -R newDir  -> to check all the subDirectories of all the directories that newDir directory containing
-4.4 ls -t         -> display a list of files and directories in the current directory, sorted by modification time, with the newest ones at the top
-4.5 ls -lt        -> shows detailed information about each file, including modification time, and the files are sorted with the newest(last modified) at the top
-4.6 ls -lr        -> shows detailed information about each file, including modification time, and the files are sorted reversly with the oldest(modified) at the top
-4.7 ls -la        -> to check all the files(including all the hidden files also) & the files name which are proceded by dot(.) are the hidden file
-4.8 ls -s         -> list the files in the current directory along with their allocated sizes in blocks
-4.9 ls -lR | grep .json -> list files recursively in a directory and its subdirectories (ls -lR) and then filter the output to show only the lines containing the string ".json"
-4.10 ls *.js      -> list all files in the current directory that have a ".js" extension.
-4.11 ls zoom*     -> list files and directories in the current directory that start with the characters "zoom".
-4.12 ls ..        -> list the contents(files and folder) of the parent directory (one level up) from the current directory
-
-NOTE : we can use multiple combination of commands and can check the files according to our requirement.
-Example : ls -lRa newdir/snake_game
-
-_________________________________________________
-
 5. mkdir - make directory / create directory
 6. touch - create files inside a particular folder
 7. rm (file_name) - to delete a file
@@ -51,15 +33,21 @@ _________________________________________________
 10. vi - VIM command (allow us to edit files)
 11. mv - helps in moving a file or folder from one place to other.
 
-syntax : mv (file_wantToMove) (folderName_wheretomove)
+syntax : mv (source) (destination)
 Ex : $ mv a.txt newfolder
+or,  $ mv file.txt documents/
+or,  $ mv file.txt /path/to/destination/
 
-12. cp -> helps in copy a file or folder
+12. mv old_fileName new_fileName -> Rename a file 
+13. cp -> helps in copy a file or folder
 
 syntax : cp (file/folder_name)  (folderName_toPaste)
 Ex : $ cp a.txt newfolder
 
-13. npm (node package manager) ->  it helps in managing the external libraries that we use in our local machine.
+#case : circuits/test is a directory (not copied)
+$ cp -r circuits/test contracts (now test will copied to contracts) - here we are coping recursively
+
+14. npm (node package manager) ->  it helps in managing the external libraries that we use in our local machine.
 
 syntax : npm install libraryName
 
@@ -67,8 +55,57 @@ for example : express, so to use express(which is an external library) in our lo
               express libraries, and this express library is register on NPM(NPM is a place where , people register there librabies which is written by them) 
               and we can use those librabies by using "npm" command to resolve/do our task.
 
-14. node -> it give us a playground to run or test javascript code.
-15. node a.js -> it helps to compile and run our javascript file locally.
+15. node -> it give us a playground to run or test javascript code.
+16. node a.js -> it helps to compile and run our javascript file locally.
+
+
+
+--Advance Bash Commands--
+
+1. ls - list all the files of current directory
+_________________________________________________
+1.1 ls newDir     -> to check all the files/folders inside newDir directory
+1.2 ls -l         -> to check the details about all the files(it's size, owner/author, last modified date, file type(either a file or folder))
+1.3 ls -R newDir  -> to check all the subDirectories of all the directories that newDir directory containing
+1.4 ls -t         -> display a list of files and directories in the current directory, sorted by modification time, with the newest ones at the top
+1.5 ls -lt        -> shows detailed information about each file, including modification time, and the files are sorted with the newest(last modified) at the top
+1.6 ls -lr        -> shows detailed information about each file, including modification time, and the files are sorted reversly with the oldest(modified) at the top
+1.7 ls -la        -> to check all the files(including all the hidden files also) & the files name which are proceded by dot(.) are the hidden file
+1.8 ls -s         -> list the files in the current directory along with their allocated sizes in blocks
+1.9 ls -lR | grep .json -> list files recursively in a directory and its subdirectories (ls -lR) and then filter the output to show only the lines containing the string ".json"
+1.10 ls *.js      -> list all files in the current directory that have a ".js" extension.
+1.11 ls zoom*     -> list files and directories in the current directory that start with the characters "zoom".
+1.12 ls ..        -> list the contents(files and folder) of the parent directory (one level up) from the current directory
+
+NOTE : we can use multiple combination of commands and can check the files according to our requirement.
+Example : ls -lRa newdir/snake_game
+_________________________________________________
+
+2. cat - print/view the content of a file
+
+2.1 cat > newfile.txt  -> can add content in file named newfile.
+2.2 cat >> newfile.txt -> can append content in the file named newfile with the content which is already present in the file.
+
+3. mkdir test && cd test   -> it will create a directory test and also navigate to test from it's previous directory.
+4. mkdir -p newDesk/script -> creating a directory(script) inside newDesk recursively(means without navigating inside the newDesk directory we can create the a new directory inside it)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
