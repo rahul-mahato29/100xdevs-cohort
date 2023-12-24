@@ -234,20 +234,53 @@ $ Desktop/Assignment$ echo $PATH
 /Python311/Scripts:/mnt/c/Users/815ra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/815ra/AppData/Roaming/npm:/mnt
 /c/Users/815ra/AppData/Local/Programs/Hyper/resources/bin:/snap/bin
 
+# working with the content of the file :
+
+6. head fileName -> return the first 10 lines/rows of the specified file.
+7. tail fileName -> return the last 10 lines/rows of the specified file.
+
+8. head -20 fileName -> return 20 lines from the top of the specified file.
+9. tail -20 fileName -> return 20 lines from the end of the specified file.
+
+# want to view the content somewhere from the middle
+
+10. ( | -> pipe operator)
+
+Example : $ head -n 29 filename | tail -n 5
+
+Explanation:
+
+1. head -n 29 filename : This part of the command extracts the first 29 lines of the file.
+
+2. | : This is the pipe operator, which takes the output of the command on its left and uses it as input for the command on its right.
+
+3. tail -n 5: This part of the command takes the last 5 lines from the output of the head command.
+
+Q - want to view the content of the file from lineNumber 25 to lineNumber 29
+
+Ans -> $ head -n +25 fileName | head -n 5
+
+The command head -n +25 fileName | head -n 5 is used to display lines from a file, starting from line 25 
+and showing the next 5 lines. Here's a breakdown of how this command works:
+
+1. head -n +25 fileName : This part of the command extracts lines starting from line 25 to the end of the file.
+2. | : This is the pipe operator, which takes the output of the command on its left and uses it as input for the command on its right.
+3. head -n 5: This part of the command takes the first 5 lines from the output of the previous head command.
+
+So, the overall effect is that it displays lines 25 to 29 from the file.
 
 
+11. wc fileName -> return numberOfLines, numberOfWords, numberOfCharacters containing the content of the specified file.
 
+Ex: 50    68    330  newFile.txt (50-lines 68-words 330-characters)
 
+12. Search of a particular accurance of words within a file.
 
-
-
-
-
-
-
-
-
-
+Ex: grep "one" newfile.txt -> return all the words having "one" in it.
+And,
+    grep "one" newfile.txt | wc -> return numberOfLines, numberOfWords, numberOfCharacters from all line where "one" word is used.
+And,
+    grep "one" newfile.txt | wx -l -> return only the number of words which is containing "one" in it.
 
 
 
