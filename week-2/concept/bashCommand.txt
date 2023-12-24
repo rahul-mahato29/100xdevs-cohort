@@ -5,10 +5,33 @@
 
 --Bash Commands--
 
+Q- What is Bash ?
+
+It is command line interpreater language, that help's in interacting with our operating system.
+
 1. pwd -> print working directory
 2. cd -> change directory
 3. cd .. -> go back by one folder
 4. ls - listing all the files of the current folder
+_________________________________________________
+4.1 ls newDir     -> to check all the files/folders inside newDir directory
+4.2 ls -l         -> to check the details about all the files(it's size, owner/author, last modified date, file type(either a file or folder))
+4.3 ls -R newDir  -> to check all the subDirectories of all the directories that newDir directory containing
+4.4 ls -t         -> display a list of files and directories in the current directory, sorted by modification time, with the newest ones at the top
+4.5 ls -lt        -> shows detailed information about each file, including modification time, and the files are sorted with the newest(last modified) at the top
+4.6 ls -lr        -> shows detailed information about each file, including modification time, and the files are sorted reversly with the oldest(modified) at the top
+4.7 ls -la        -> to check all the files(including all the hidden files also) & the files name which are proceded by dot(.) are the hidden file
+4.8 ls -s         -> list the files in the current directory along with their allocated sizes in blocks
+4.9 ls -lR | grep .json -> list files recursively in a directory and its subdirectories (ls -lR) and then filter the output to show only the lines containing the string ".json"
+4.10 ls *.js      -> list all files in the current directory that have a ".js" extension.
+4.11 ls zoom*     -> list files and directories in the current directory that start with the characters "zoom".
+4.12 ls ..        -> list the contents(files and folder) of the parent directory (one level up) from the current directory
+
+NOTE : we can use multiple combination of commands and can check the files according to our requirement.
+Example : ls -lRa newdir/snake_game
+
+_________________________________________________
+
 5. mkdir - make directory / create directory
 6. touch - create files inside a particular folder
 7. rm (file_name) - to delete a file
