@@ -137,6 +137,62 @@ Desktop/Assignment/100xdevs-cohort/week-1/assignment/easy$ ls -l
 -rwxrwxrwx 1 mahatorahul mahatorahul 525 Dec  4 09:13 expenditure-analysis.js
 -rwxrwxrwx 1 mahatorahul mahatorahul 250 Dec  4 09:13 findLargestElement.js
 
+Q - How to modify the (read, write & execute)permission for a file or a folder ?
+
+file permissions determine who can perform certain actions (read, write, execute) on a file or directory
+The "chmod" command is used to change these permissions,
+
+syntax : chmod permissions fileName 
+
+There are two ways through which we can set the permission of a file or folder
+
+1. Symbolic Representation : Through using (r-read, w-write, x-execute) chracter method.
+
+User Classes:
+
+u: User/Owner
+g: Group
+o: Others
+a: All (equivalent to ugo)
+
+Operations:
+
++: Add permissions
+-: Remove permissions
+=: Set permissions explicitly
+
+Permission Types:
+
+r: Read
+w: Write
+x: Execute
+
+Examples: Symbolic Representation:
+
+# To add execute permission for the owner of a file:
+$ chmod u+x filename  
+
+# To remove write and execute permissions for others:
+$ chmod o-wx filename
+
+To set read and write permissions for the owner and the group, and remove all permissions for others:
+$ chmod ug=rw,o= filename
+
+
+2. Octal Representation : Through using (4-read, 2-write, 1-execute) numeric method.
+
+In octal representation, each permission type is represented by a number:
+
+4: Read
+2: Write
+1: Execute
+
+For example, to set read and write permissions for the owner and remove all permissions for others:
+$ chmod 600 filename
+
+To grant read, write, and execute permissions for the owner, read and execute permissions for the group, and no permissions for others:
+$ chmod 750 filename
+
 
 --Some List Commands--
 
@@ -167,8 +223,16 @@ _________________________________________________
 
 3. mkdir test && cd test   -> it will create a directory test and also navigate to test from it's previous directory.
 4. mkdir -p newDesk/script -> creating a directory(script) inside newDesk recursively(means without navigating inside the newDesk directory we can create the a new directory inside it)
+5. echo "message" -> to display any message
 
+Ex :  echo $PATH -> to look the current path
 
+Look something like,
+$ Desktop/Assignment$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files
+/Common Files/Oracle/Java/javapath:/mnt/c/MinGW/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Users/815ra/AppData/Roaming/Python
+/Python311/Scripts:/mnt/c/Users/815ra/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/815ra/AppData/Roaming/npm:/mnt
+/c/Users/815ra/AppData/Local/Programs/Hyper/resources/bin:/snap/bin
 
 
 
