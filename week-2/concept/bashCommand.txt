@@ -274,13 +274,52 @@ So, the overall effect is that it displays lines 25 to 29 from the file.
 
 Ex: 50    68    330  newFile.txt (50-lines 68-words 330-characters)
 
-12. Search of a particular accurance of words within a file.
+12. Search of a particular occurance of words within a file.
 
 Ex: grep "one" newfile.txt -> return all the words having "one" in it.
 And,
     grep "one" newfile.txt | wc -> return numberOfLines, numberOfWords, numberOfCharacters from all line where "one" word is used.
 And,
     grep "one" newfile.txt | wx -l -> return only the number of words which is containing "one" in it.
+
+OR,
+13. grep -c "one" newfile.txt -> return number of count of "one" word in newfile.txt file.
+14. grep -h "one" newfiel.txt -> return all the lines where word "one" is present in newfile.txt
+15. grep -hi "one" newfile.txt -> searches for the pattern "one" (case-insensitive, means can be in capital or small) 
+                                  in the file newfile.txt and prints the lines that contain the specified pattern.
+output : one
+         One
+         ONe 
+         ONE 
+
+16. grep -hin "one" newfile.txt -> return as above output but with the line number also.
+
+output :1:one
+        2:One
+        3:ONe 
+        4:ONE
+
+17. grep -hinw "one" newfile.txt ->  used to search for the exact word "one" in a case-insensitive manner within files.
+
+-> Here's a breakdown of the options:
+
+-h : Suppresses the display of filenames in the output.
+-i : Performs a case-insensitive search.
+-n : Displays the line numbers along with the lines that match the pattern.
+-w : Matches only whole words. It ensures that "one" is not part of a larger word.                                
+
+18. grep -o "one" newfile.txt -> used to show only the part of a line that matches the specified pattern.
+19. grep -w "one" newfile.txt -> used to search for the exact word "one" in a file or input stream. 
+                                 The -w option ensures that the pattern is matched only as a whole word 
+                                 and not as part of a larger word.
+
+20. history 0 -> to view all the command that we executed in the terminal previously.
+
+
+
+
+
+
 
 
 
