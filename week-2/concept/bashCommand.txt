@@ -315,6 +315,55 @@ output :1:one
 
 20. history 0 -> to view all the command that we executed in the terminal previously.
 
+Q - Bash Script ??
+
+Putting a bash command into a script involves taking one or more commands that you  would normally exexute 
+in the bash shell and placing them into a file with a ".sh" extension or another suitable script extension. 
+The file becomes a Bash script, and it can be executed as a single unit, automating the execution of those
+commands.
+
+Example :
+
+1. create a script 
+
+open a text editor (like 'nano', 'vim', or 'gedit') and create a file named "myscript.sh".
+first create the file of .sh extension and then open it in VIM and then follow the steps mentioned below.
+
+2. write bash commands in the script
+
+Add the follwing content to the script file:
+
+#!/bin/bash          
+echo "hello, world!"
+mkdir auomated_dir
+cd automated_dir && touch newScript_file.txt
+
+The above script consist of 3 lines, the first line 
+(#!/bin/bash) is called a shebang and specifies the path 
+to the interpreter (in this case, Bash) that we like to use 
+to parse our script.
+
+3. save and exit 
+
+save the file and exit the text editor
+
+4. Then execute it
+
+syntax : $ bash scriptFileName.sh
+
+
+NOTE: In case it is not executing then, need to make the script file as executable file
+      and for that,
+
+      4.1 - use "chmod" command to make the script executable
+      ex : chmod +x myscript.sh
+      4.2 - Execute the script by running
+      ex : ./myscript.sh
+This will run the commands within the script, and you should see the output on your terminal.
+
+
+
+
 
 
 
