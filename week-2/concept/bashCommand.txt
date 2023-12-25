@@ -351,7 +351,6 @@ save the file and exit the text editor
 
 syntax : $ bash scriptFileName.sh
 
-
 NOTE: In case it is not executing then, need to make the script file as executable file
       and for that,
 
@@ -361,9 +360,110 @@ NOTE: In case it is not executing then, need to make the script file as executab
       ex : ./myscript.sh
 This will run the commands within the script, and you should see the output on your terminal.
 
+----------------------------------------------------------------------
+Example : $ cat log.txt
+
+output : Timestamp       Category    Message
+         1598843202      INFO        Botting up System
+         1598843402      ERROR       User annonymous attempt to access
+         1598843502      INFO        System booted succcessfully
+         1598853502      INFO        System health checkup
+         1598863888      INFO        User admin requested
+         1598863891      ERROR       Request resource not found
+-----------------------------------------------------------------------
+
+21. grep "ERROR" log.txt -> return only ERROR category messages
+22. grep -v "INFO" log.txt -> to get all the details apart from "INFO" messages
+
+23. grep -B 5 ERROR log.txt ->  used to search for the string "ERROR" in the file log.txt 
+                                and display the matching lines along with the 5 lines before 
+                                each match (5 lines of leading context). The -B option stands 
+                                for "before."
+
+23. grep -C 5 ERROR log.txt ->  used to search for the string "ERROR" in the file log.txt and 
+                                display the matching lines along with the 5 lines before and 
+                                after each match (5 lines of context both before and after each match). 
+                                The -C option stands for "context".
 
 
+Q - sed SCRIPT FILE ?
 
+The sed command is used for text manipulation in Linux environments. 
+It is particularly powerful for performing search-and-replace operations, 
+as well as other text transformation.
+
+syntax : sed 'SCRIPT' FileName
+
+here SCRIPT represents the series of sed commands you want to apply,
+and the SCRIPT can include various sed commands separated by semicolons.
+
+Example :  file named example.txt with the following content:
+           Hello, world!
+           This is an example.
+Now, Now, you want to replace "Hello" with "Hi" and "example" with "sample.
+
+$ sed 's/Hello/Hi/; s/example/sample/' example.txt
+
+output : Hi, world!
+         This is an sample.
+
+NOTE:
+The sed's substitute command has the following structure:
+'s/pattern/replacement/'
+
+24. sed 's/ERROR/CRITICAL' log.txt -> replacing ERROR with CRITICAL
+
+25. sed -ibackup 's/ERROR/CRITICAL' log.txt -> create a log.txt backup file for us, so that we can experiment 
+                                              on the original file and the new file that is created will be saved as it is.
+
+26. sed '3 s/ERROR/CRITICAL' log.txt -> here 3 specifing the lineNumber so the changes will only reflect on linenumber 3.
+
+27. sed '3,5 s/ERROR/CRITICAL' log.txt -> 3,5 means line number 3 to 5, so replace ERROR with CRITICAL from linenumber 3 to 5.
+
+28. sed -n '3,/ERROR/ p' log.txt -> command uses the sed stream editor to print lines starting from the third line up to and including the line containing the pattern "ERROR" in the file log.txt.
+
+Q - awk Script file
+
+awk command is a powerful text-processing tool in Unix and Linux systems. It's often used for pattern scanning and processing.
+ An awk script consists of a series of patterns and actions. Here's the basic syntax:
+
+syntax : awk 'pattern { action }' file
+here,
+pattern: Specifies a pattern to match lines.
+{ action }: Specifies an action to be performed on lines that match the pattern.
+
+
+Example : file named example.txt with the following content:
+          John 25
+          Alice 30
+          Bob 22
+Now, want to print the names of people who are 25 years old or older. You can create an awk script for this:
+
+$ awk '$2 >= 25 { print $1 }' example.txt
+
+output : John
+         Alice
+
+Explanation:
+
+1. $2: Represents the second field in each line (the age in this case).
+2. $2 >= 25: This is the pattern, which checks if the age is greater than or equal to 25.
+3. { print $1 }: This is the action, which prints the first field (the name) of lines that match the pattern.
+
+
+29. awk '/CRITICAL/{print $0}' log.txt
+
+30. awk '{gsub(/CRITICAL/, "ERROR")}{print}' log.txt
+
+31. awk 'BEGIN {print "LOG SUMMARY\n----------"} {print} END {print "-------------\END OF LOG SUMMARY"}' log.txt
+
+32. awk '{print $1, $2}' log.txt -> only print the 1st and 2nd column data from log.txt file
+
+33. awk -F "," '{print $1, $2}' log.txt
+
+34. awk '{count[$2]++} END {print count["ERROR"]}' log.txt -> count the number of time ERROR occured in the 2nd column (arithmatic opertion on file)
+
+35. awk '{if ($1 > 159886388 ) {print $0} }' log.txt -> checking condition and on the basis of condition it will print the result (conditional operation on file)
 
 
 
