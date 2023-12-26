@@ -149,3 +149,35 @@ Example : input : what is 2 + 2 ?
 Response Header :  for login purpose 
 Response Body   :  2 + 2 is equal to 4
 Status Code     :  200
+
+Q - What happens when I go to google.com and press enter ? what are the sequence of events that happens in your browser ??
+
+1. Browser parses the URL 
+2. Does a DNS lookup (convert google.com to an IP)
+3. Establishes a connection to the IP (does handshake...)
+
+NOTE : command - $ ping google.com (return the IP Address of google.com)
+
+Q - What happen on your server after the request is received ??
+
+1. you get the input (route, body, headers)
+2. you do some logic on the input, calculate the output
+3. you return the output body, headers and status code 
+
+## Methods (That we send to the server) ##
+
+Q - What are the common methods you  can send to our backend server ?
+
+1. GET 
+2. POST 
+3. PUT 
+4. DELETE 
+
+## Status Code (That we send back to the client with the response of the query)
+
+Q - What are the common status condes the backend responds with ?
+
+1. 200 - Everything is ok
+2. 404 - page/route not found
+3. 403 - Authentication issues
+4. 500 - Internal server error 
