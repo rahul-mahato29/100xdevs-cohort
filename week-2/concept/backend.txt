@@ -1,4 +1,128 @@
-1. Node.js and its runtime
-2. Backend communication protocols (HTTP Servers)
-3. Express Basic
-4. Routes, Status codes
+1. What is ECMAScript ?
+
+-ECMAScript : (The Specification)
+-ECMAScript is a scripting language specification standardized by Ecma International in the ECMA-262 and ISO/IEC 16262
+ documents. It serves as the guideline or the 'rules' for scripting language design.
+
+-Versions : ECMAScript versions(like ES5, ES6, ES2015, ES2017, etc) are essentially
+            updates to the specification, introducing new features and syntaxes. For 
+            example, ES6 introduced arrow function, classes, and template literals.
+
+2. What is Javascript ?
+
+-Javascript : (The Implementation)
+-Javascript is a scripting language thta conforms to the ECMAScript specification.
+ It's the most widely known and used Implementation of ECMAScript.
+
+-Beyond ECMAScript : Javascript includes additional features that are not part of the
+ ECMAScript specification, like the Document Object Model(DOM) manipulation, which is 
+ crucial for web development but is not defined by ECMAScript.
+
+NOTE :
+There are multiple compiler present for compiling the javascript code, out of all those 
+compiler, 2 very popular compiler of JAVASCRIPT are :
+# V8 Compiler / V8 Engine - Used google chrome/chromium
+
+V8 Engine is used in chrome and in Node.js for compiling JS code into native machine code (zero's & one's).
+V8 Engine : V8 is an open-source javascrip engine developed by chromium project for Google Chrome 
+            and chromium web browsers. It's written in c++ and is responsible for compiling javascript
+            code into native machine code before executing it, which greatly improves performance.
+
+# SpiderMonkey Compiler - Used by firefox (written in C and Rust)
+
+
+3. What is Node.js ?
+
+simple : Some smart people took out the V8 engine added some backend things(filesystem read) on top to create a new 
+         runtime to compete with Backend language like Java. 
+
+(Node.js = Runtime Environment + JavaScript Library)
+
+-NodeJS is not a framework and it’s not a programming language, Node.js is a cross-platform runtime environment and library, 
+ for running JavaScript code or applications outside the browser. Node.js is used to build back-end services like APIs.
+-Node.js also provides a rich library of various JavaScript modules to simplify the development of web applications.
+
+## some of the notable features of Node.js that contribute to its suitability for backend development ##
+   or, we can say, these features make Node.js capable, to be used for backend developement.
+
+3.1- Asynchronous and Non-blocking I/O:
+
+Node.js is built on the V8 JavaScript runtime, and it uses an event-driven, non-blocking I/O model. This allows handling a large number of 
+concurrent connections without the need for multi-threading, making it highly scalable. Asynchronous operations enable efficient handling of 
+I/O-bound tasks, such as reading from a database or making API calls, without blocking the execution of other tasks.
+
+3.2- Single-threaded Event Loop:
+
+Node.js uses a single-threaded event loop to handle multiple concurrent connections. This eliminates the overhead of managing threads and allows 
+developers to write highly scalable applications. It doesn't mean that Node.js can't take advantage of multi-core systems. Developers can utilize 
+the built-in 'cluster' module or deploy multiple Node.js processes to leverage multi-core architectures.
+
+3.3- Fast Execution with V8 Engine:
+
+Node.js leverages the V8 JavaScript engine developed by Google, which is known for its speed and performance. This allows Node.js to execute JavaScript 
+code quickly and efficiently. 
+NPM (Node Package Manager):
+
+NPM is a powerful package manager that simplifies dependency management and allows developers to easily integrate third-party libraries and modules into their projects.
+The vast NPM ecosystem provides a rich set of reusable components and libraries, saving development time and effort.
+
+3.4- Cross-Platform Compatibility:
+
+Node.js is designed to be cross-platform, allowing developers to write code that can run on various operating systems with minimal modifications.
+This flexibility is beneficial for development teams working in heterogeneous environments.
+
+3.5- Real-time Capabilities:
+
+Node.js is well-suited for applications that require real-time features, such as chat applications, online gaming, and collaborative tools, thanks to its event-driven architecture.
+
+3.6- JSON (JavaScript Object Notation) Support:
+
+JSON is a lightweight data interchange format widely used for data transfer between a server and a client. Node.js has native support for JSON, making it easy to work with JSON data in web applications.
+
+3.7- Libraries and Frameworks:
+
+There are several libraries and frameworks built on top of Node.js that facilitate backend development, such as Express.js, Koa.js, and Nest.js. These frameworks provide additional features, routing, and abstractions to streamline development.
+
+3.8- Scalability:
+
+Node.js is inherently designed for scalability, and its non-blocking I/O model allows applications to handle a large number of concurrent connections efficiently.
+Horizontal scaling can be achieved by deploying multiple instances of the Node.js application and using load balancing techniques.
+
+4. What is Bun ?
+
+simple - Node.js is slow (could be multiple reason for it), so some smart people said they wanted to re-write the Javascript runtime for the backend and introduced "BUN".
+         It is a significantly faster runtime. It is written in Zig (low letency code - this are little faster than other language).
+
+Bun is an all-in-one toolkit for JavaScript and TypeScript apps. 
+At its core is the Bun runtime, a fast JavaScript runtime designed as a drop-in replacement for Node.js. It's written in Zig and powered by JavaScriptCore under the hood, 
+dramatically reducing startup times and memory usage.
+
+
+
+
+
+
+
+
+
+
+
+
+What can you do with Node.js ?
+
+1. Create an HTTP server
+2. Create clis 
+3. Create a video games
+4. Create a game
+
+HTTP protocols (Things client needs to worry about)
+-> protocols (HTTP/HTTPS)
+-> Address (URL/IP/PORT)
+-> Route
+-> Header Body Query Parameter's
+-> Method
+
+HTTP protocols (Things server needs to worry abot)
+->Response Header 
+->Response Body
+->Status Codes 
