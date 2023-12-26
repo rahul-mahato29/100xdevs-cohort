@@ -1,0 +1,4 @@
+1. Node.js and its runtime
+2. Backend communication protocols (HTTP Servers)
+3. Express Basic
+4. Routes, Status codes
