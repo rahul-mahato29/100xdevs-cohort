@@ -181,3 +181,14 @@ Q - What are the common status condes the backend responds with ?
 2. 404 - page/route not found
 3. 403 - Authentication issues
 4. 500 - Internal server error 
+
+______________________________________________________________
+Q - Why do we need status code ? Why can't we just return in the body something like success.
+Q - Why do we need so many types of request methods ? Why can't just one work ?
+Q - Why do we need body/headers/query params, why can't just one work ?
+
+Answer to the above 3 Questions :
+These are standard practises that are good to follow to develop a efficient server, although we don't need all of it, but it is what 
+is mentioned in the specifications and hence is good to follow.
+______________________________________________________________
+
