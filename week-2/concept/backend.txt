@@ -98,31 +98,54 @@ At its core is the Bun runtime, a fast JavaScript runtime designed as a drop-in 
 dramatically reducing startup times and memory usage.
 
 
+--So, mainly we will focus on Node.js, specifically, how to write backend application using Javascript(i.e Node.js)--
 
 
+Q- What can you do with Node.js ?
 
-
-
-
-
-
-
-
-What can you do with Node.js ?
-
-1. Create an HTTP server
-2. Create clis 
+1. Create an HTTP server (95% of time we will be using Node.js for creating HTTP servers)
+2. Create CLIs  (command line interfaces) - we can create "commands" that can be executed on bash terminal
 3. Create a video games
 4. Create a game
 
-HTTP protocols (Things client needs to worry about)
+Q - What is HTTP Server ?
+
+- HTTP : Hyper Text Transfer protocols
+- A protocols that is defined for machine to communicate.
+- specifically for website, it is the most common way for your website's 
+  frontend to talk to its backend.
+
+# HTTP protocols (Things client side needs to worry about)
+
 -> protocols (HTTP/HTTPS)
 -> Address (URL/IP/PORT)
 -> Route
 -> Header Body Query Parameter's
 -> Method
 
-HTTP protocols (Things server needs to worry abot)
+Example : input : what is 2 + 2 ?
+          output: 2 + 2 is equal to 4
+
+example : asked the above query in chatGPT, https://chat.openai.com/backend-api/conversation .
+
+breakdown of above URL, where u have asked the question.
+
+protocols : https
+Address   : chat.openai.com 
+Route     : backend-api/conversation
+header    : Cookie - 123ab@ofoijij#aeoijfo
+body      : What is 2 + 2 ?
+Method    : POST 
+
+# HTTP protocols (Things server side needs to worry about)
+
 ->Response Header 
 ->Response Body
-->Status Codes 
+->Status Code 
+
+Example : input : what is 2 + 2 ?
+          output: 2 + 2 is equal to 4
+
+Response Header :  for login purpose 
+Response Body   :  2 + 2 is equal to 4
+Status Code     :  200
