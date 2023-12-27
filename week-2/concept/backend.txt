@@ -168,17 +168,17 @@ Q - What happen on your server after the request is received ??
 
 Q - What are the common methods you  can send to our backend server ?
 
-1. GET 
-2. POST 
-3. PUT 
-4. DELETE 
+1. GET    - when u asking something from the server  Ex- asking something from the chatGPT and getting some response from it.
+2. POST   - when u put/send some data to the server(backend)  Ex-posting a picture on instagram, sending your picture to the instagram server.
+3. PUT    - when u update some data on the server (updating ur password or First name of insta account)
+4. DELETE - when u delete some data from the server (deleting ur instagram account)
 
 ## Status Code (That we send back to the client with the response of the query)
 
 Q - What are the common status condes the backend responds with ?
 
 1. 200 - Everything is ok
-2. 404 - page/route not found
+2. 404 - page/route not foun d
 3. 403 - Authentication issues
 4. 500 - Internal server error 
 
@@ -191,4 +191,6 @@ Answer to the above 3 Questions :
 These are standard practises that are good to follow to develop a efficient server, although we don't need all of it, but it is what 
 is mentioned in the specifications and hence is good to follow.
 ______________________________________________________________
+
+
 
