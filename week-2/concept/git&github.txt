@@ -100,6 +100,9 @@ ___________IMP___________
 Q- If you've successfully merged your feature branch into the main branch on the remote repository (GitHub), but the changes are 
    not yet reflected in your local main branch in VSCode, you may need to perform a few additional steps to update your local 
    repository. 
+
+Example : for example a new folder added into the main project then to bring that new added folder into your local repo, follow 
+          the below steps. 
    
 Here's what you can do:
 
@@ -116,7 +119,7 @@ This switches your working directory to the main branch.
 
 3. Merge the Changes: Merge the changes from the remote main branch into your local main branch:
 
-$ git merge origin/main
+$ git merge origin/main (exact : git merge origin)
 This command merges the changes fetched from the remote main branch into your local main branch.
 
 4. Resolve Conflicts (if any): If there are merge conflicts, Git will notify you. Open the conflicted files, resolve the conflicts, 

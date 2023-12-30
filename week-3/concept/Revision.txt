@@ -1,0 +1,61 @@
+1. JS Foundation 
+
+->Basic
+
+1. let, const, var
+2. loops
+3. functions
+4. strings, number, boolean
+5. array (map, filter) , objects
+6. Date, Objects methods 
+
+->Advance
+
+1. Async programming
+2. event loop/ webAPIs
+3. Callbacks
+4. Asynchronous functions
+5. Async , await
+6. Promises (Important)
+
+IMP - specifically, if u can understand - how u can call a function that returns a promises. (good)
+    or, if u can write a function that return by your self that return a promise. (more good)
+
+
+2. Node.js Runtime
+
+1. we understand what is node.js and it's Runtime
+2. learned about V8 and spiderMonkey
+3. V8 or spiderMonkey compiler , compiler JS ==> bytecode(machine lang) i.e zero's or one's 
+4. V8 engine is used by chrome (that's why chrome can compile the JS into machine lang)
+5. then we knew, some smart people, added few things on top of JS (to introduce NODE.js) that made JSs capable for developing backend.
+6. Node.js -> it a runtime that is use to execute javascript code on the backend.
+7. there is multiple use of Node.js, but we are using it for creating HTTP servers.
+8. then we also introduce, "BUN" - basically bun is the compitetor of Node.js, it is more faster compare to Node.js
+
+9. HTTP (main focus) -> it exposes your algorithm to the world, it lets people request for and use your logic.
+                        just like "chatGPT".
+10. what is the famous library that we use to create HTTP server is "Express.js".
+
+IMP : Express -understand GET,POST,PUT routes. spend some time and get comfortable with the syntax of express.
+
+
+3. Express Basics
+
+1. understood the syntax of express.
+2. understood the routes (GET,POST,PUT,DELETE)
+3. Taking input (req.query and body)
+4. status codes 
+
+4. Express Advance (next week we will cover advance express)
+
+1. Advance express
+2. Authentication - how to add Authentication in our website. (how to create simple username and password thing on our backend)
+2. Middelware 
+3. global catches - how to catch the server crash.
+
+5. Databases intro
+
+1. understand Databases (NoSQL/SQL)
+2. mongoDB
+3. Postgres 
