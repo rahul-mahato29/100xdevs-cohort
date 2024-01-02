@@ -52,7 +52,57 @@ const ticket = new Promise(function (resolve, reject) {
       console.log("I am always get executed");
     });       
   
-  
-  //promises with asynchronous function
+
+// Async-await function
+
+//in the below example, "fetch" will return a promise
+let a = 10;
+let b = 20;
+let c = a + b;
+
+async function getData() {
+  let result = await fetch("https://jsonplaceholder.typicode.com/posts");
+  console.log(result);
+}
+
+getData();
+console.log(c);
+
+//IMP : mostly we go for async-await function instead of using .then.catch.finally
+//      we can implement the above also as,
+
+
+fetch("https://jsonplaceholder.typicode.com/posts")
+.then((data) => {
+  console.log(data);
+})
+.catch((error) => {
+  console.log(error);
+})
+.finally(() => {
+  console.log("I am finally");
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //note : A promise is just a class that makes callbacks and async functions slightly more readable
   
   

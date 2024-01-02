@@ -23,6 +23,8 @@ IMPORTANT : Net amount of time take to do a task can be decreased by doing these
 
 //introducing an asynchronous function 
 
+//NOTE : Usually all async functions you will write will be on top of JS provided async functions like "fetch()", "setTimeout" or "fs.readFile".
+
 // some common async functions provided by JS
 // 1. setTimeout - execute some task after a given time period.
 // 2. fs.readFile - to reading a file from your filesystem, for example, if i am using node.js(means running javascript file locally) then our JS file can read other files also like txt file, mp4 file, JSON file.
@@ -69,3 +71,30 @@ console.log("Hi There");
 // Hi There
 // example of asynchronous function  (because fs.readfile is an asynchronous function so it will delegate the read file task and print the below code)
 
+// 3. fetch() function
+
+// synchrounous programming
+let a = 10;
+let b = 20;
+let c = a + b;
+
+function getData() {
+  let result = fetch("https://jsonplaceholder.typicode.com/posts");
+  console.log(result);
+}
+
+getData();
+console.log(c);
+
+// Asynchrounous programming / Asynchrounous function
+let a1 = 10;
+let b1 = 20;
+let c1 = a1 + b1;
+
+async function getData() {
+  let result = await fetch("https://jsonplaceholder.typicode.com/posts");
+  console.log(result);
+}
+
+getData();
+console.log(c1);
