@@ -1,0 +1,55 @@
+Q - What is Authentication? 
+  - Authentication is the process of verifying the identity of a user or process.
+
+There are two types of authentication patterns :
+1. statefull : Authentication is done by the server. (which maintains state or data at the server side)
+
+2. stateless : Authentication is done by the client. (which has no state)
+
+--------------------------------------------------------
+1. statefull : Authentication is done by the server. (which maintains state or data at the server side)
+
+Example : car parking
+In case of statefull authentication, the server maintains a state of the users, here state means data that is pointing to 
+the users identity, just like in car parking example, parking boy is maintaining a list where he is mentioning all the 
+ticket number associated with car number, here each ticket number is pointing to a car, similarly in server when user logs 
+in with username and password, then server maintains a state where they assocaite each username with a unique ID (uid), 
+and whenever we login back to the server, then we send that the uid and server checks and responsed back with the resources.
+
+Q - How to server transer uid to the client ?
+
+so, server can send the uid to the client through three different ways, 
+1. In the form of cookies
+2. In the form of response
+3. In the headers
+
+NOTE: usually we use headers (in REST API)
+
+Q - flow of the express , how it works with statefull authentication ?
+
+client  ----->  Auth Middleware   ----> endpoint route(server)
+
+when client will request to the express server, then auth middleware will check the request and specialy checks for cookie 
+value or uid, if user is valid then it will calls next() function, else rejects the request. 
+
+//Problems with statefull authentication
+1. if my server get restart or for some reason if my state is lost, then my user will be logged out from the application.
+
+2. statefull authenication is memory intensive, because it uses our server's memory to store the user's state. And we know 
+that we have limited memory on our server, so we need to make sure that, we need to use the server memory in efficient manner.
+
+and there are lot of limitations with statefull authentication,
+so to solve all these we require stateless authentication. 
+-------------------------------------------------------
+
+2.stateless authentication : Authentication is done by the client. (server don't have any state).
+
+Example : car parking
+In case of stateless authentication, the server doesn't maintains any state , here instead of mainting the car number in 
+the record(state) at the server side, we mention the car number in the ticket of the user but this time we also metioned 
+a stamp which is unique and only belong's to that parking. So when user will cameback then parking staff will 
+check/validate the ticket,then  particularly the the staff will check the  stamp which refer that ticket is belong's to 
+this parking area only. and if it's valid then only user can access it's car.
+
+So, here we don't maintain any state, so we don't need to use the server memory to store the user's state. And that's why 
+\we called this as "stateless authentication".
