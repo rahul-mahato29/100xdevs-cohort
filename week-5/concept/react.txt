@@ -141,3 +141,37 @@ funciton MyHeading(props) {
 
 ---------------Hooks-----------------
 
+1. useState Hook 
+
+State : a state of a component is a variable that holds some information that may change over the lifetime of the component.
+NOTE : States are local to it's component. (a state of a particular component will only update it's local component not others).
+
+whenever the value of the state changes, the component re-renders itself with updated values. (React is very reactive, it re-render itself, that's why it's called React).
+
+
+
+In React, a hook is a special function that allows you to use state and other React features in functional components. Hooks were introduced in React 16.8 to provide a way to use state and lifecycle features in functional components, which were previously only available in class components.
+
+
+__________________________
+The most common hooks are:
+
+1. useState: Allows you to add state to functional components. It returns an array with two elements: 
+             the current state value and a function that lets you update it.
+
+Example :
+
+import React, { useState } from 'react';
+
+function ExampleComponent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
