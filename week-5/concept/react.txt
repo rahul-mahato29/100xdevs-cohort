@@ -1,0 +1,143 @@
+-----------Component-----------
+
+Q - What is Component in React ?
+
+Eveything in React is Component, whatever u see on the screen is a component, header section, or footer section, 
+button, search bar, navbar..everything are component. (Components are the basic building blocks of react).
+
+Q - How to create a component ?
+
+Ex- create a Hello World component, and this component helps in writing Hello World in <h1> tag.
+
+import React from "react";
+
+function HelloWorld() {        --> this is component
+    return <h1>Hello World</h1>;
+}
+
+In React, A component is simply a function that helps in performing a particular task.
+In above example, HelloWorld component is helping us in writing Hello World inside <h1> tag.
+
+Q - Rules for create a component ?
+
+#Rule-1 : should return JSX. (means, it should return a HTML)
+
+Example-1: (valid component) -> returning HTML
+
+function HelloWorldComponent() {
+    return <h3>Hello World</h3>;
+}
+
+Example-2: (not valid component) -> returning String
+
+function HelloWorldComponent() {
+    return 'Hello World';
+}
+
+#Rule-2 : Component name must start with Uppercase Letter
+
+Example-1: (valid component) -> name : HelloWorldComponent
+
+function HelloWorldComponent() {
+    return <h3>Hello World</h3>;
+}
+
+Example-2: (not valid component) -> name : helloworldcomponent
+
+function helloworldcomponent() {
+    return 'Hello World';
+}
+
+NOTE : in case-2, it will not render the component.
+
+
+-------------JSX (Javascript XML) - Advance/extended version of HTML---------------------
+
+follow react documentation for JSX
+
+-> some features of JSX
+  
+1. basic example
+const element = <h1>Hello World</h1>;
+
+2. embedding expression in JSX
+const name = 'Rahul';
+const element = <h1>Hello, {name}</h1>; 
+
+output : Hello, Rahul
+
+3. Javascript in JSX
+
+funciton formateName(user) {
+    return user.firstName + ' ' + user.lastName;
+}
+
+const user = {
+    firstName: 'Rahul',
+    lastName: 'Mahato'
+};
+
+const element = (
+    <h1>
+        Hello, {formateName(user)};
+    </h1>
+);
+
+4. Dynamic Attributes
+
+cont imageURL = "www.example.com/myPic.png";
+const element = <img src={imageURL} />
+
+or,
+
+const linkToSite = "www.example.com";
+const element = <a href={linkToSite}>Click Here</a>;
+
+5. JSX expressions must have one parent element.
+
+Example-1 : give error, because <h2>, <h1> & <h3> are different components.
+
+function App() {
+  return (
+    <h2>Result : {add()}</h2>
+    <h1>Hello World</h1>
+    <h3>{link}</h3>
+  );
+}
+
+Example-2: Correct, because <h2>, <h1> & <h3> are different components but having same parent element (i.e, <div>).
+
+function App() {
+  return (
+    <div>
+    <h2>Result : {add()}</h2>
+    <h1>Hello World</h1>
+    <h3>{link}</h3>
+    <div>
+  );
+}
+
+
+---------------Props---------------
+
+Props are like parameters to a function.
+
+Example-1 : Static output - Hello World
+
+function MyHeading() {
+    return <h1>Hello World</h1>;
+}
+
+Example-2 : Dynamic Output - output depends on the parameters
+
+funciton MyHeading(props) {
+    return <h1>{props.title}</h1>;
+}
+
+
+--during rendering (passing parameter)
+<MyHeading title="This is dynamci heading content" />
+
+
+---------------Hooks-----------------
+
