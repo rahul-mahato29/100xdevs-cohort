@@ -175,3 +175,35 @@ function ExampleComponent() {
     </div>
   );
 }
+
+
+2. useEffect Hook 
+
+-lifecycle of a component
+
+1. Contruction (Contruction of a component)
+2. Mount (when component render on the screen)
+3. Update (when we update the state of a component (re-rendering of component))
+4. Un-Mount (when "component"(previous component) is removed from the screen after updation)
+
+so, whenever we want to perform any kind of task or any function, when a component is movingn from one state to 
+another state, for example a component is moving from it's constrcution state to it's Mount state and I want 
+to peform a operation at Mount state then in such cases we will use "useEffect" Hook.
+
+so, basically we will be using the useEffect hook in last 3 states of the component's lifecycle.
+means when, 
+
+1. moving from construction to Mount  --> (perfrom operation at Mount state)
+2. moving from Mount to Update --> (perform operation at Update state)
+3. moving from Update to Un-Mount --> (peform operation at Un-Mount state)
+
+Exampe :- 
+
+1. Moving from construction to Mount (At Mount State)
+
+ 
+2. Moving from Mount to Update (At Update State)
+
+
+3. Moving from Update to Un-Mount (At Un-Mount State)
+
