@@ -6,12 +6,14 @@ import Header from './components/Header';
 import List from  './components/todoList';
 import Button from './components/button';
 import Counter from './components/counterComponent';
+import Effect from './components/Effect';
 
 
 const App = () => {
   return (
     <div className="todo-container">
-      <Counter />
+      <Effect />
+      {/* <Counter /> */}
       <Header />
       <List item = "ReactJS" />
       <List item = "ExpressJS" />
