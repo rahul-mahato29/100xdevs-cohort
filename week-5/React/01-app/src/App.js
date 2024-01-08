@@ -15,8 +15,10 @@ const App = () => {
 
   return (
     <div className="todo-container">
-      {isVisible ? <Effect /> : <></>}
-      <button onClick={!isVisible}>Toggle</button>
+      
+      { isVisible ? <Effect /> : <> </>}
+      <button onClick={ () => setVisible(!isVisible)}>Toggle</button>
+
       {/* <Counter /> */}
       <Header />
       <List item = "ReactJS" />
