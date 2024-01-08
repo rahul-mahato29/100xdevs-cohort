@@ -226,6 +226,27 @@ const MyComponent() {
  
 2. Moving from Mount to Update (At Update State)
 
+Here, value of dependency array is "count", it means when value of count will get updated then
+useEffect function(parameter function) will get executed.
+
+import React, { useEffect , useState} from 'react';
+
+const Effect = () => {
+
+    const [count, setCount] = useState(0);
+
+    //useEffect
+    useEffect( () => {
+        console.log("mounting data")
+    }, [count]);
+
+    return (
+        <div>
+            <h3>Count : {count}</h3>
+            <button onClick={() => setCount(count+1)}>Increment</button>
+        </div>
+    );
+}
 
 3. Moving from Update to Un-Mount (At Un-Mount State)
 
