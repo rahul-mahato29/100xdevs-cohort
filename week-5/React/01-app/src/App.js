@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 
 
@@ -10,9 +10,13 @@ import Effect from './components/Effect';
 
 
 const App = () => {
+
+  const [isVisible, setVisible] = useState(true);
+
   return (
     <div className="todo-container">
-      <Effect />
+      {isVisible ? <Effect /> : <></>}
+      <button onClick={!isVisible}>Toggle</button>
       {/* <Counter /> */}
       <Header />
       <List item = "ReactJS" />
