@@ -210,12 +210,11 @@ import {useEffect} from 'react';
 
 const MyComponent() {
 
-----useEffect----
+    //useEffect during mounting of data 
     useEffect( () => {
       //code Here
       console.log('Hello');
     }, []);
------------------
 
     return (
         <div>
@@ -235,7 +234,7 @@ const Effect = () => {
 
     const [count, setCount] = useState(0);
 
-    //useEffect
+    //useEffect during updation of data
     useEffect( () => {
         console.log("mounting data")
     }, [count]);
