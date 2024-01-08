@@ -4,7 +4,12 @@ const Effect = () => {
 
     const [count, setCount] = useState(0);
 
-    //useEffect
+    //useEffect during mounting of data
+    useEffect( () => {
+        console.log("mounting data")
+    }, []);
+
+    //useEffect during updation of data
     useEffect( () => {
         console.log("mounting data")
     }, [count]);
