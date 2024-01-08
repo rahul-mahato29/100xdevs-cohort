@@ -201,6 +201,11 @@ Exampe :-
 
 1. Moving from construction to Mount (At Mount State)
 
+useEffect take two parameters, first is function and another is dependency, the function that we passing 
+as parameter get executed when state of component changes. And in the second parameter, if we are not 
+passing anything in the dependency array, means if the dependency array is empty then it will run when 
+state is changing from Contruction to Mount.
+
 import {useEffect} from 'react';
 
 const MyComponent() {
