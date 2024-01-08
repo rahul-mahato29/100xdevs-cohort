@@ -177,7 +177,7 @@ function ExampleComponent() {
 }
 
 
-2. useEffect Hook 
+2. useEffect Hook : we use useEffect during the change of state in lifecycle of a component.
 
 -lifecycle of a component
 
@@ -201,6 +201,23 @@ Exampe :-
 
 1. Moving from construction to Mount (At Mount State)
 
+import {useEffect} from 'react';
+
+const MyComponent() {
+
+----useEffect----
+    useEffect( () => {
+      //code Here
+      console.log('Hello');
+    }, []);
+-----------------
+
+    return (
+        <div>
+        <p> Hey There </p>
+        </div>
+    );
+}
  
 2. Moving from Mount to Update (At Update State)
 
