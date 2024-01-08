@@ -6,7 +6,11 @@ const Effect = () => {
 
     //useEffect during mounting of data
     useEffect( () => {
-        console.log("mounting data")
+        console.log("mounting data");
+
+        return function () {
+            console.log("Unmounting data")
+        };
     }, []);
 
     //useEffect during updation of data

@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div className="todo-container">
-      
+
       { isVisible ? <Effect /> : <> </>}
       <button onClick={ () => setVisible(!isVisible)}>Toggle</button>
 

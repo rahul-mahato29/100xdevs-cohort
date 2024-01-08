@@ -249,3 +249,20 @@ const Effect = () => {
 
 3. Moving from Update to Un-Mount (At Un-Mount State)
 
+In case of Unmounting, the function which is returned by the useEffect function get executed during unmounting of data and return 
+the output of the return function logic.
+
+const Effect = () => {
+
+    const [count, setCount] = useState(0);
+
+    //useEffect during Unmounting of data
+    useEffect( () => {
+        console.log("mounting data");
+
+        //The below function will get executed during unmounting of data
+        return function () {
+            console.log("Unmounting data")
+        };
+    }, []);
+
