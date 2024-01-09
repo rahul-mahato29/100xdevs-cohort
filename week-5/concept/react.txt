@@ -266,3 +266,19 @@ const Effect = () => {
         };
     }, []);
 
+------------------------------
+NOTE :
+
+useEffect( () => {
+        console.log("mounting data ", count)
+
+        return function () {
+            console.log("Returning Value ", count);
+        }
+    }, [count]);
+
+when we return inside useEffect when our dependency array is not empty, in that case first we will get
+the returing value and then console.log value, because whenever re-rending take place then first it unmount 
+the previous data and then perform the updation and update with the updated data. so that's why first you 
+will receive the return value because during unmounting return value get retuned and then will receive the 
+updated data.
