@@ -5,13 +5,13 @@ const Effect = () => {
     const [count, setCount] = useState(0);
 
     //useEffect during mounting of data
-    // useEffect( () => {
-    //     console.log("mounting data");
+    useEffect( () => {
+        console.log("mounting data");
 
-    //     return function () {
-    //         console.log("Unmounting data")
-    //     };
-    // }, []);
+        return function () {
+            console.log("Unmounting data")
+        };
+    }, []);
 
     //useEffect during updation of data
     useEffect( () => {
