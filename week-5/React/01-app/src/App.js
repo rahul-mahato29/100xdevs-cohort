@@ -8,16 +8,6 @@ import Button from './components/button';
 // import Counter from './components/counterComponent';
 import Effect from './components/Effect';
 
-// //checkbox testing
-// const checkbox = document.getElementById('myCheckbox');
-//     checkbox.addEventListener('change', function() {
-//       if (this.checked) {
-//         console.log('Checkbox is checked');
-//       } else {
-//         console.log('Checkbox is unchecked');
-//       }
-//     });
-
 
 const App = () => {
   const [isVisible, setVisible] = useState(true);
