@@ -282,3 +282,8 @@ the returing value and then console.log value, because whenever re-rending take 
 the previous data and then perform the updation and update with the updated data. so that's why first you 
 will receive the return value because during unmounting return value get retuned and then will receive the 
 updated data.
+
+
+##React Redux 
+
+Done with Redux
