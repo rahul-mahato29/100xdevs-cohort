@@ -8,6 +8,7 @@ const Effect = () => {
     useEffect( () => {
         console.log("mounting data");
 
+    //useEffect during unmounting of data    
         return function () {
             console.log("Unmounting data")
         };
@@ -17,6 +18,7 @@ const Effect = () => {
     useEffect( () => {
         console.log("mounting data ", count)
 
+        //useEffect during unmounting the state, updating to another state.
         return function () {
             console.log("Returning Value ", count);
         }
