@@ -1,0 +1,25 @@
+Designing a REST API - supporting JSON.
+
+Routes :- 
+
+1. GET/api/users - List all users    (metioning 'api' is good practice, if this is throwing a json data to browser, mobile or other devices)
+   GET/users - HTML Document Render
+
+2. GET/api/user/1 - get the user with ID 1.
+   similarly for (GET/user/2) - should get the user with ID 2.
+   
+   here user-1, user-2 -> is dynamic path parameters.
+   ex : GET/api/users/:id
+   here, :id - dynamic variable
+
+3. POST/api/users - create new user.
+    
+4. PATCH/api/user/1 - edit the user with ID.
+
+5. DELETE/api/users/1 - Delete the user with ID.
+
+So, to perform above task, we need data. So for data we need to use mongoDB for retriving the data from it.
+or API, but we don't have any of these, so we will hardcode it for now to test all.
+ 
+NOTE : "mockaroo.com" - generate fake data for testing purposes.
+ 

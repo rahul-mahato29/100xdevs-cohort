@@ -1,0 +1,14 @@
+{
+  "name": "restapi",
+  "version": "1.0.0",
+  "description": "Learning RESTfull API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul Mahato",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
