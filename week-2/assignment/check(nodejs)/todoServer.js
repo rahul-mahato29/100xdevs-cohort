@@ -40,10 +40,111 @@
   Testing the server - run `npm run test-todoServer` command in terminal
  */
   const express = require('express');
+  const app = express();
+  const port = 3000;
   const bodyParser = require('body-parser');
   
-  const app = express();
+
+  let data = [{
+    id : 1,
+    title: "DSA",
+    description: "2Problems"
+  },{
+    id : 2,
+    title: "ReactJS",
+    description: "React Assignment"
+  },{
+    id : 3,
+    title: "CU",
+    description: "CU Assignment"
+  },{
+    id : 4,
+    title: "Interview",
+    description: "Javascript"
+  },{
+    id : 5,
+    title: "Backend",
+    description: "Reddis"
+  }];
   
   app.use(bodyParser.json());
-  
-  module.exports = app;
+
+  // 1.GET /todos - Retrieve all todo items
+  app.get('/todos', function(req, res){
+      console.log("test");
+      res.json(data);
+  })
+
+  // 2.GET /todos/:id - Retrieve a specific todo item by ID
+  app.get('/todos/:id', function(req, res){
+
+    const todo = data.find(info => info.id === parseInt(req.params.id));
+
+    if(!todo){
+      res.status(400).send();
+    }
+    else{
+      res.json(todo);
+    }
+  })
+
+  // 3. POST /todos - Create a new todo item
+  app.post('/todos', function(req, res){
+    const newTodo = {
+      id : req.body.id,
+      title : req.body.title,
+      description : req.body.description
+    }
+
+    data.push(newTodo);
+
+    res.status(200).json(newTodo);
+  })
+
+
+  // 4. PUT /todos/:id - Update an existing todo item by ID
+  app.put('/todos/:id', function(req, res){
+    let id = req.params.id;
+    let todoData = data.find(info => info.id === parseInt(id));
+    
+    if(!todoData){
+      res.status(404).send();
+    }
+    else{
+      todoData.title = "😃😃😃";
+      todoData.description = "Smile please";
+    }
+
+    res.json({
+      msg : "Updation Done!!!"
+    })
+  })
+
+  // 5. DELETE /todos/:id - Delete a todo item by ID
+  app.delete('/todos/:id', function(req, res){
+    console.log("test");
+      let id = req.params.id;
+      let todoIndex = data.findIndex(info => info.id === parseInt(id));
+
+      if(todoIndex === -1){
+        res.status(404).send();
+      }
+      else{
+        data.splice(todoIndex,1);
+        res.status(200).json({
+          msg: "Todo Deleted"
+        })
+      }
+  })
+
+   // for all other routes, return 404
+   app.use((req, res, next) => {
+    res.status(404).send();
+  });
+
+
+  app.listen(port, () => {
+    console.log("Port running at ", port);
+  })
+
+  // module.exports = app;
