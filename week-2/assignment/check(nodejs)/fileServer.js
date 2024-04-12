@@ -16,6 +16,36 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
+const port = 3000;
+
+// 1. GET /files - Returns a list of files present in `./files/` directory
+app.get('/files', function(req, res){
+  fs.readdir(path.join(__dirname, './files/'), (err, files) => {
+      if(err)
+        return res.status(500).json({error: "failed to retrive files"});
+      res.json(files);
+  })
+})
+
+// 2. GET /file/:filename - Returns content of given file by name
+app.get('/file/:filename', function(req, res){
+  let fileName = path.join(__dirname, './files/', req.params.filename);
+
+  fs.readFile(fileName, 'utf-8', (err, fileData) => {
+      if(err)
+        res.status(404).send("File Not Found");
+      res.json(fileData);
+  })
+})  
+
+//For any other route not defined in the server return 404
+app.all('*', (req, res) => {
+  res.status(404).send("Route Not Found");
+})
+
+app.listen(port, () => {
+  console.log("prot running at ", port);
+})
 
 
 module.exports = app;
