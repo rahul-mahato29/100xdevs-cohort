@@ -1,26 +1,31 @@
+const { json } = require("body-parser");
 const express = require("express");
 const app = express();
 
 const users = [{
     name: "John",
     kidneys: [{
-        healthy: false
+        healthy: true
+    },{
+        healthy: true
     }]
 }];
 
 app.use(express.json());
 
-//GET Request
-app.get("/", function(req, res) {
-    const johnKidneys = users[0].kidneys;
-    const numberOfKidneys = johnKidneys.length;
+//GET request
+app.get('/', function(req, res){
+
+    let numberOfKidneys = users[0].kidneys.length;
+
     let numberOfHealthyKidneys = 0;
-    for (let i = 0; i<johnKidneys.length; i++) {
-        if (johnKidneys[i].healthy) {
-            numberOfHealthyKidneys = numberOfHealthyKidneys + 1;
-        }
+    for(let i=0; i<numberOfKidneys; i++){
+        if(users[0].kidneys[i].healthy)  //value is already true or false
+            numberOfHealthyKidneys++;
     }
-    const numberOfUnhealthyKidneys = numberOfKidneys - numberOfHealthyKidneys;
+
+    let numberOfUnhealthyKidneys = numberOfKidneys - numberOfHealthyKidneys;
+
     res.json({
         numberOfKidneys,
         numberOfHealthyKidneys,
@@ -28,55 +33,61 @@ app.get("/", function(req, res) {
     })
 })
 
-//POST Request
-app.post("/", function(req, res) {
-    
+//POST request
+app.post('/set', function(req, res){
+
     const isHealthy = req.body.isHealthy;
     users[0].kidneys.push({
-        healthy: isHealthy
+        healthy : isHealthy
     })
+    res.json({
+        msg : "Done!"
+    })
+})
+
+//PUT request
+app.put('/update', function(req, res){
+    //making all the inhealthy kidney , healthy.
+    for(let i=0; i<users[0].kidneys.length; i++){
+        if(!users[0].kidneys[i].healthy)
+            users[0].kidneys[i].healthy = true;
+    }
+
     res.json({
         msg: "Done!"
     })
 })
 
-// 411
-//PUT Request
-app.put("/", function(req, res) {
-    for (let i = 0; i<users[0].kidneys.length; i++) {
-        users[0].kidneys[i].healthy = true;
-    }
-    res.json({});
-})
-
-// removing all the unhealhty kidneys
-//DELETE Request
-app.delete("/", function(req, res) {
-    if(isThereAtleastOneUnhealthyKidney()) {
-        const newKidneys = [];
-        for (let i = 0; i<users[0].kidneys.length; i++) {
-            if (users[0].kidneys[i].healthy) {
-                newKidneys.push({
-                    healthy: true
-                })
-            }
+//Delete request
+app.delete('/removed', function(req, res){
+    //remove all the other kidney if more than 2.
+    let newKidney = [];
+    if(countKidney() > 2){
+        let n = 2;
+        while(n--){
+            newKidney.push({
+                healthy : true
+            })
         }
-        users[0].kidneys = newKidneys;
-        res.json({msg: "done"})   
-    } else {
-        res.status(411).json({
-            msg: "You have no bad kidneys"
-        });
+
+        users[0].kidneys = newKidney;
+        res.json({
+            msg: "all set, Done!"
+        })
+    }
+    else{
+        res.status(200).json({
+            msg : "your all kidneys are fine"
+        })
     }
 })
 
-function isThereAtleastOneUnhealthyKidney() {
-    let atleastOneUnhealthyKidney = false;
-    for (let i = 0; i<users[0].kidneys.length; i++) {
-        if (!users[0].kidneys[i].healthy) {
-            atleastOneUnhealthyKidney = true;
-        }
-    }
-    return atleastOneUnhealthyKidney
+function countKidney(){
+    return users[0].kidneys.length;
 }
-app.listen(3000);
+
+
+app.listen(3000, () => {
+    console.log("Port start ",3000);
+});
+

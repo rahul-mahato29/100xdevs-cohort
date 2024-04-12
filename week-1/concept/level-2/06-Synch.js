@@ -3,7 +3,7 @@
 /*
 What does synchronous means ?
 
-Together, one after the other, sequntial
+one after the other, sequntial
 only one thing is happening at a time.
 
 What does Asynchronous means ?
@@ -56,6 +56,8 @@ console.log("Hello World");
 // Hello World
 // 4950  (it will get printed after 1second)
 
+
+
 // 2. fs.readFile
 
 const fs = require("fs");
@@ -70,6 +72,8 @@ console.log("Hi There");
 //output
 // Hi There
 // example of asynchronous function  (because fs.readfile is an asynchronous function so it will delegate the read file task and print the below code)
+
+
 
 // 3. fetch() function
 
