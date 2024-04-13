@@ -11,10 +11,29 @@ const app = express();
 // You have been given a numberOfRequestsForUser object to start off with which
 // clears every one second
 
-let numberOfRequestsForUser = {};
+let numberOfRequestsForUser = {};  //This variable is getting cleared in every 15 second.
 setInterval(() => {
     numberOfRequestsForUser = {};
-}, 1000)
+}, 15000)
+
+//Global Middleware
+app.use((req, res, next) => {
+  const userId = req.headers["user-id"];
+
+  if(numberOfRequestsForUser[userId]){  //-> this userId is already present in numberOfRequestsForUser then,
+    console.log("for the 2nd time");
+    numberOfRequestsForUser[userId] += 1;
+    if(numberOfRequestsForUser[userId] > 5)
+        res.status(404).send("No Entry");
+    else  
+        next();
+  }
+  else{
+    console.log("for the 1st time"); //just for testing purpose
+    numberOfRequestsForUser[userId] = 1;  //-> when userId is requesting for the first time.
+    next();
+  }
+})
 
 app.get('/user', function(req, res) {
   res.status(200).json({ name: 'john' });
@@ -23,5 +42,10 @@ app.get('/user', function(req, res) {
 app.post('/user', function(req, res) {
   res.status(200).json({ msg: 'created dummy user' });
 });
+
+
+app.listen(3000, () => {
+  console.log("port running at ", 3000);
+})
 
 module.exports = app;

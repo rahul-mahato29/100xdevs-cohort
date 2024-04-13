@@ -3,6 +3,7 @@ const assert = require('assert');
 const express = require('express');
 
 const app = express();
+const port = 3000;
 let errorCount = 0;
 
 // You have been given an express server which has a few endpoints.
@@ -22,5 +23,17 @@ app.post('/user', function(req, res) {
 app.get('/errorCount', function(req, res) {
   res.status(200).json({ errorCount });
 });
+
+app.listen(port, () => {
+  console.log("Port is running at ", port);
+})
+
+//Global Middleware (error handling middleware) - function is written below, so that error occured above can be handled.
+app.use((err, req, res, next) => {
+if(err){
+  res.status(404).send();
+  errorCount = errorCount + 1;
+}
+})
 
 module.exports = app;
