@@ -34,7 +34,6 @@ app.use(express.json());
 
 mongoose.connect(
     //your_mongo_url
-    'mongodb+srv://admin:rahul2901@cluster0.63mtkv0.mongodb.net/UserData'
 );
 
 //defining database schema
