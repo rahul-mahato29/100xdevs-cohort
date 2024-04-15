@@ -1,27 +1,11 @@
-const mongoose = require('mongoose');
+const express = require('express');
+const app = express();
+const port = 3000;
 
-// Connect to MongoDB
-mongoose.connect('your-mongodb-url');
+const AdminRoute = require('./routes/admin');
 
-// Define schemas
-const AdminSchema = new mongoose.Schema({
-    // Schema definition here
-});
+app.use('/admin', AdminRoute);
 
-const UserSchema = new mongoose.Schema({
-    // Schema definition here
-});
-
-const CourseSchema = new mongoose.Schema({
-    // Schema definition here
-});
-
-const Admin = mongoose.model('Admin', AdminSchema);
-const User = mongoose.model('User', UserSchema);
-const Course = mongoose.model('Course', CourseSchema);
-
-module.exports = {
-    Admin,
-    User,
-    Course
-}
+app.listen(port, () => {
+    console.log(`port is running at ${port}`);
+})
