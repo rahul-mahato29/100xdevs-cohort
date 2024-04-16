@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('MongoDB-LINK');
+mongoose.connect('mongodb+srv://admin:rahul2901@cluster0.63mtkv0.mongodb.net/JWT_authenticated_app');
 
 // Define schemas
 const AdminSchema = new mongoose.Schema({
@@ -13,7 +13,11 @@ const AdminSchema = new mongoose.Schema({
 const UserSchema = new mongoose.Schema({
     // Schema definition here
     username: String,
-    password: String
+    password: String,
+    purchasedCourses: [{    
+        type: mongoose.Schema.Types.ObjectId,    
+        ref: 'Course'
+    }]
 });
 
 const CourseSchema = new mongoose.Schema({
